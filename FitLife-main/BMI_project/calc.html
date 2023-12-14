@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitÉlet</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+</head>
+
+<body>
+  <!--Menu section-->
+  <nav class="navbar bg-body-tertiary navbar-light bg-secondary">
+    <div class="container">
+      <a class="navbar-brand fs-4" href="#">
+        <h1>FitÉlet</h1>
+      </a>
+      <button class="navbar-toggler border-2 bg-border-dark" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+            <h2>Kalória kakulátor</h2>
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">
+                <h3>FitÉlet</h3>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="bmi.html">
+                <h4>BMI</h4>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                <h4>Kalória kalkulátor</h4>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--Main section-->
+  <div class="main">
+    <div class="row">
+      <div class="col">
+        <div class="container userinput">
+          <form>
+            <div class="row">
+              <div class="col-50">
+                <label for="kcal">
+                  <h3><b>Mit ettél ma?</b></h3>
+                </label>
+              </div>
+              <div>
+                <input type="text" class="etelname" id="etelname" name="etelname" placeholder="Étel neve..." >
+              </div>
+              <div>
+                <input type="button" onclick="Kaloriaszamlalas()" value="Hozzáadás" class="plusbutton">
+                <input type="button"  value="Mentés" class="plusbutton right_button">
+              </div>
+            </div>
+            <div >
+              <h3>Összesen: <span id="total"></span></h3>
+            </div>
+          </form>
+          <div class="adatok">
+            <table>
+              <tr>
+                <th>Fehérje</th>
+                <th>Zsír</th>
+                <th>Szénhidrát</th>
+              </tr>
+              <tr>
+                <td id="feherje"></td>
+                <td id="zsir"></td>
+                <td id="szenhidrat"></td>
+              </tr>
+            </table>
+            <div  class="foods">
+                <h2>Meals:</h2>
+                <div id="foods"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="container">
+          <table style="overflow: auto;">
+            <tr>
+              <th>Megnevezés (100g)</th>
+              <th>Fehérje (g)</th>
+              <th>Zsír (g)</th>
+              <th>Szénhidrát (g)</th>
+              <th>Kalória (kcal)</th>
+            </tr>
+            <tr>
+              <td>Csirkemáj</td>
+              <td>17</td>
+              <td>5</td>
+              <td>1</td>
+              <td>119</td>
+            </tr>
+            <tr>
+              <td>Csirkecomb</td>
+              <td>20,9</td>
+              <td>5,2</td>
+              <td>0,5</td>
+              <td>139</td>
+            </tr>
+            <tr>
+              <td>Rák</td>
+              <td>14,9</td>
+              <td>0,8</td>
+              <td>2,2</td>
+              <td>77</td>
+            </tr>
+            <tr>
+              <td>Tyúk</td>
+              <td>19</td>
+              <td>6,5</td>
+              <td>0,4 </td>
+              <td>140</td>
+            </tr>
+            <tr>
+              <td>Hekk</td>
+              <td>20,2</td>
+              <td>0,9</td>
+              <td>0 </td>
+              <td>89</td>
+            </tr>
+            <tr>
+              <td>Joghurt, gyümölcsös</td>
+              <td>3,5</td>
+              <td>2</td>
+              <td>10,3</td>
+              <td>74</td>
+            </tr>
+            <tr>
+              <td>Tejföl, 12%</td>
+              <td>3,4</td>
+              <td>12 </td>
+              <td>4</td>
+              <td>137,6</td>
+            </tr>
+            <tr>
+              <td>Kefír (sovány)	</td>
+              <td>3,4</td>
+              <td>0,1 </td>
+              <td>4,6</td>
+              <td>34</td>
+            </tr>
+            <tr>
+              <td>Fürjtojás	</td>
+              <td>12,5</td>
+              <td>10,8 </td>
+              <td>0,7</td>
+              <td>154</td>
+            </tr>
+            <tr>
+              <td>Tojásfehérje	</td>
+              <td>12,5</td>
+              <td>0,4 </td>
+              <td>0,8</td>
+              <td>57,1</td>
+            </tr>
+            <tr>
+              <td>Tojás	</td>
+              <td>13,5</td>
+              <td>12</td>
+              <td>0,6</td>
+              <td>5164</td>
+            </tr>
+            <tr>
+              <td>Barna kenyér		</td>
+              <td>8,5</td>
+              <td>0,8</td>
+              <td>50,6	</td>
+              <td>249</td>
+            </tr>
+            <tr>
+              <td>Kenyér	</td>
+              <td>10</td>
+              <td>1,8</td>
+              <td>54,5	</td>
+              <td>262</td>
+            </tr>
+            <tr>
+              <td>Kifli (sós, tejes)	</td>
+              <td>10</td>
+              <td>3</td>
+              <td>58	</td>
+              <td>308</td>
+            </tr>
+            <tr>
+              <td>Rizs	</td>
+              <td>8</td>
+              <td>0,03</td>
+              <td>77,5</td>
+              <td>344</td>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
