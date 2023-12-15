@@ -36,6 +36,7 @@ function Kaloriaszamlalas() {
             foszenhidrat += element.Szénhidrát;
             fokcal += element.Kalória;
 
+            food.push(etelname);
             found = true;
         }
     });
