@@ -10,15 +10,16 @@
     <link rel="icon" type="image/x-icon" href="/favicon.png">
     <script src="calculator.js"></script>
     <link rel="stylesheet" href="bmi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 <body>
   <!--Menu section-->
-    <nav class="navbar bg-body-tertiary navbar-light bg-secondary">
+    <nav class="navbar bg-body-tertiary navbar-light bg-dark">
         <div class="container">
-          <a class="navbar-brand fs-4" href="#"><h1>FitÉlet</h1></a>
-          <button class="navbar-toggler border-2 bg-border-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <a class="navbar-brand fs-4 text-danger" href="#"><h1>FitÉlet</h1></a>
+          <button class="navbar-toggler border-2  " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon  border-btn-light"></span>
           </button>
           <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header border-bottom">
@@ -44,7 +45,7 @@
       <div class="main">
           <div class="row">
             <div class="col-lg-8">
-              <h1>BMI Calculator</h1>
+              <h1 class="bg-dark text-light">BMI Calculator</h1>
               <form>
                 <input type="radio" id="male" name="gender" value="male">
                 <label for="male" class="text-dark">Férfi</label>
@@ -57,18 +58,69 @@
                 <input type="number" id="height" placeholder="Enter height in cm" class="text-dark"><br><br>
                 <label for="weight" class="text-dark">Testsúly (kg):</label>
                 <input type="number" id="weight" placeholder="Enter weight in kg" class="text-dark"><br><br>
-                <button onclick="Calc()" type="button" class="btn btn-light">Calculate BMI</button>
-                
+                <button onclick="Calc()" type="button" class="btn btn-light">Calculate BMI</button> <br> <br>
+                <div id="printbmi" class="text-dark"></div>
+              <div id="printclass" class="text-dark"></div>
+              <div id="printgen" class="text-dark"></div>
               </form>
             </div>
             <div class="col-lg-4">
-              <div id="printbmi" class="text-dark"></div>
-              <div id="printclass" class="text-dark"></div>
-              <div id="printgen" class="text-dark"></div>
+              
             </div>
         </div>
         <div class="col-m-4 sport">
         </div>
       </div>
+      <footer class="bg-dark text-white pt-5 pb-4">
+
+        <div class="container text-center  text-md-left">
+    
+                  <div class="row text-left">
+    
+                          <div class="col-md-3 col-lg-3 col-lg-2 mx-auto mt-3 ">
+                              <h5 class="h5 text-uppercase font-weight-bold text-danger">Fitlife</h5>
+                              <p class="p-3"> <i class="text-danger"></i> <i class="lower-case "><br> Üzleteink már megtalálhatok <br> Budapesten Szegeden és Miskolcon is.</i></p>
+                          </div>
+    
+                        
+    
+                         
+                          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-2 ">
+                              <h5 class="text-uppercase mb-4 font-weight-bold text-danger">Elérhetöségeink</h5>
+                              <p class="text-start m-4"><i class="fas fa-home mr-3"></i> Miskolc, Szentpáli u. 3, 3525 </p>
+                              <p class="text-start m-4"><i class="fas fa-envelope mr-3"></i> Kende@gmail.com</p>
+                              <p class="text-start m-4"><i class="fas fa-phone mr-3"></i> +369934951</p>
+                              <p class="text-start m-4"><i class="fas fa-print mr-3"></i> +013345423</p>
+                          </div>
+    
+                  </div>
+                  <hr class="mb-4">
+                          
+                  <div class="row text-start m-3 ">  
+                      <div class="col-md-7 col-lg-8">
+                        <p>Copyright ©2023 all rights reserved by: <a href="#" style="text-decoration:none;"><strong class="text-danger">PrionKFT</strong></a> </p>
+                      </div>
+                  
+    
+                      <div class="col-md-5 col-lg-4">
+                          <div class="text-center text-md-right">
+                              <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item">
+                                  <a href="https://www.facebook.com/" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-facebook"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                  <a href="https://accounts.google.com/v3/signin/identifier?dsh=S-838450939%3A1685458532965776&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&ifkv=Af_xneGsnuTZONnKkEwgPhDkqH4tmGdGNuZK1UNLdR6yUYn_wAhm3zXs_3vb_4-qjNMRPHUuB_zRCg&osid=1&passive=1209600&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-google-plus"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                  <a href="https://www.youtube.com" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-youtube"></i></a>
+                                </li>
+                              </ul>
+                          </div>
+                      </div>
+                </div>
+      
+      </div>
+    
+      </footer>
 </body>
 </html>

@@ -1,13 +1,17 @@
+// Fő változok letrehozása
 let fofeherje = 0, fozsir = 0, foszenhidrat = 0, fokcal = 0;
-let food = [];
+// jövőbeli terv:
+//let food = [];
 
 function Kaloriaszamlalas() {
+    // UserInput eltárolása
     let etelname = document.getElementById("etelname").value;
     let feherje = document.getElementById("feherje");
     let zsir = document.getElementById("zsir");
     let szenhidrat = document.getElementById("szenhidrat");
     let total = document.getElementById("total");
     
+    // objectum tömb létrehozása
     let kaja = 
     [
   { name: "Csirkemáj", Fehérje: 17, Zsír: 5, Szénhidrát: 1, Kalória: 119 },
@@ -26,42 +30,40 @@ function Kaloriaszamlalas() {
   { name: "Kifli (sós, tejes)", Fehérje: 10, Zsír: 3, Szénhidrát: 58, Kalória: 308 },
   { name: "Rizs", Fehérje: 8, Zsír: 0.03, Szénhidrát: 77.5, Kalória: 344 }
     ];
-    
-    let found = false;
-
-    kaja.forEach(element => {
-        if (etelname.toLowerCase() === element.name.toLowerCase()) {
-            fofeherje += element.Fehérje;
+    // bool érték a hiba kereséshez
+    let found = false;  
+   
+    kaja.forEach(element => {    // a tömb bejárása
+        if (etelname.toLowerCase() === element.name.toLowerCase()) { // Ha a user input megegyezik a tömb[nev] elemével
+            fofeherje += element.Fehérje;   
             fozsir += element.Zsír;
             foszenhidrat += element.Szénhidrát;
-            fokcal += element.Kalória;
+            fokcal += element.Kalória;                               //felvesszuk ezeket az adatokat a fő valtozoinkba
+            // jövőbeli terv:
+            // food.push(etelname); 
 
-            food.push(etelname);
-            found = true;
+            found = true;  // A felhasznalo altal megadott értéket szerepel a tömbben (Ha igen - true, ha nem - false)
         }
     });
 
-    if (found) {
-        feherje.innerHTML = fofeherje.toFixed(2);
-        zsir.innerHTML = fozsir.toFixed(2);
+    // Ha a found változó true, kiiratjuk az értékeket
+    if (found) 
+     {
+        feherje.innerHTML = fofeherje.toFixed(2); // Az innerhtml fuggvenyt egy html id-re hivva jelenitjuk meg az adatokat
+        zsir.innerHTML = fozsir.toFixed(2);       // A toFixed fugvennyel limitáljuk a tizedes karaktereket 2-re
         szenhidrat.innerHTML = foszenhidrat.toFixed(2);
         total.innerHTML = `${fokcal.toFixed(2)}kcal`;
-    } else {
+
+     } 
+    // Ha false figyelmeztetjuk a felhasznalót
+    else
+     {
         alert("Nem található ilyen étel a listában!");
-    }
-    /*
-    if (etelname == kaja[0].name) {
-        total.innerHTML = `119`;
-    }
-    
-    for (let index = 0; index < kaja.length; index++) {
-        if (eletname == kaja["name"]) {
-            if (index)
-        }
-        
-    }
-    */
+     }
+    // jövőbeli terv:
+    /* 
     let foods = document.getElementById("foods");
 
     foods.innerHTML= `<ul><li>${food[0]}</li><br><li>${food[1]}</li><br><li>${food[2]}</li></ul>`;
+    */
 }
