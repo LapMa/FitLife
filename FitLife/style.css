@@ -37,7 +37,7 @@ body {
     left: -10%;
     flex: 0.7;
     height: 650px;
-    background-image: url(run.jpg);
+    background-image: url(img/run.jpg);
     background-size: cover;
     border-radius: 15px;
     filter: blur(2px);
@@ -123,20 +123,12 @@ th{
         backdrop-filter: blur(10px);
         color: #e2e2e2;
     }
-.more_button{
-    margin-top: 10px;
-    margin-bottom: 10px;
+footer{
+    margin-top: 14%;
 }
-.more_button:hover{
-    background-color: #8b8b8b;
-
-}
-#less_btn{
-    display: none;
-}
-td:first-child{
-    width: 27%;
-}
-
-
+.navbar-light .navbar-toggler {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
 
