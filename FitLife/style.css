@@ -96,11 +96,7 @@ th{
 .foods{
     font-size: 25px;
     margin-top: 5%;
-    border: 3px solid #000;
     width: 40%;
-    padding: 20px 10px;
-    border-radius: 10px;
-    background-color: #fff;
 }
 .foods h2{
     border-radius: 15px;
@@ -131,4 +127,10 @@ footer{
     outline: none;
     box-shadow: none;
   }
+.nav-item{
+    font-size: 24px;
+}
+.offcanvas-title{
+    font-size: 28px;
+}
 
