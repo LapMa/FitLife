@@ -38,13 +38,13 @@ function Calc() {
             {
                 // felvesszuk a bmi éetékek alapján az egészségügyi besorolásokat
                 if (bmi < 14) { 
-                    Classification = "Underweight";
+                    Classification = "Sovány";
                 } else if (bmi >= 14 && bmi < 19) {
-                    Classification = "Normal weight";
+                    Classification = "Normál súly";
                 } else if (bmi >= 19 && bmi < 25) {
-                    Classification = "Overweight";
+                    Classification = "Túlysúlyos";
                 } else {
-                    Classification = "Obese";
+                    Classification = "Túlysúlyos";
                 }
             }
 
@@ -53,13 +53,13 @@ function Calc() {
             {
                 // felvesszuk a bmi éetékek alapján az egészségügyi besorolásokat
                 if (bmi < 18.5) {
-                    Classification = "Underweight";
+                    Classification = "Sovány";
                 } else if (bmi >= 18.5 && bmi < 24.9) {
-                    Classification = "Normal weight";
+                    Classification = "Normál súly";
                 } else if (bmi >= 25 && bmi < 30) {
-                    Classification = "Overweight";
+                    Classification = "Túlysúlyos";
                 } else {
-                    Classification = "Obese";
+                    Classification = "Túlysúlyos";
                 } 
 
                 // A "Nem" változót férfira állitjuk, a kiiratás miatt szukseges
@@ -70,7 +70,7 @@ function Calc() {
                 // az innerhtml funkcioval egy html-en belüli idre hivatkozva kiiratjuk az adatokat
                 printgen.innerHTML = "Nem: " + gender;
                 printbmi.innerHTML = "BMI: " + bmi.toFixed(2);   // A toFixed fugvennyel limitáljuk a tizedes karaktereket 2-re
-                printclass.innerHTML = "suly osztály: " + Classification;
+                printclass.innerHTML = "Súly osztály: " + Classification;
         }
         
        
@@ -91,13 +91,13 @@ function Calc() {
             if (age >= 2 && age <= 15) {
                 // felvesszuk a bmi éetékek alapján az egészségügyi besorolásokat
                 if (bmi < 13) {
-                    Classification = "Underweight";
+                    Classification = "Sovány";
                 } else if (bmi >= 13 && bmi < 17) {
-                    Classification = "Normal weight";
+                    Classification = "Normál súly";
                 } else if (bmi >= 17 && bmi < 23) {
-                    Classification = "Overweight";
+                    Classification = "Túlysúlyos";
                 } else {
-                    Classification = "Obese";
+                    Classification = "Túlysúlyos";
                 }
             }
 
@@ -105,13 +105,13 @@ function Calc() {
             else if (age >= 16) {
                 // felvesszuk a bmi éetékek alapján az egészségügyi besorolásokat
                 if (bmi < 18.5) {
-                    Classification = "Underweight";
+                    Classification = "Sovány";
                 } else if (bmi >= 18.5 && bmi < 23.9) {
-                    Classification = "Normal weight";
+                    Classification = "Normál súly";
                 } else if (bmi >= 24 && bmi < 30) {
-                    Classification = "Overweight";
+                    Classification = "Túlysúlyos";
                 } else {
-                    Classification = "Obese";
+                    Classification = "Túlysúlyos";
                 }
 
 
@@ -123,7 +123,7 @@ function Calc() {
                 // az innerhtml funkcioval egy html-en belüli idre hivatkozva kiiratjuk az adatokat
                 printgen.innerHTML = "Nem: " + gender;
                 printbmi.innerHTML = "BMI: " + bmi.toFixed(2);   // A toFixed fugvennyel limitáljuk a tizedes karaktereket 2-re
-                printclass.innerHTML = "suly osztály: " + Classification;
+                printclass.innerHTML = "Súly osztály: " + Classification;
         }
         
       
