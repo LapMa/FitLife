@@ -133,4 +133,7 @@ footer{
 .offcanvas-title{
     font-size: 28px;
 }
+#less_btn{
+    display: none;
+}
 
